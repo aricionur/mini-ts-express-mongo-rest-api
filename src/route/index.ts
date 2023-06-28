@@ -1,11 +1,13 @@
 import { Express, Router } from "express";
 
 import usersRoutes from "./users";
+import productsRoutes from "./products";
 
-const route = Router();
+const router = Router();
 
 export const registerRoutes = (app: Express) => {
-  usersRoutes(route);
+  usersRoutes(router);
+  productsRoutes(router);
 
-  app.use("/", route);
+  app.use("/", router);
 };
